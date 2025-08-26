@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a Free Demo — ASN Bookkeeping</title>
+  <meta name="description" content="Book a free demo or send an enquiry to ASN Bookkeeping. Choose a time, tell us your needs, and we’ll confirm your session." />
+  <!-- Reuse your main styles, then add page-specific demo.css -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="demo.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="ASN Bookkeeping Home">
+        <span class="brand-mark">A</span>
+        <span class="brand-text">ASN Bookkeeping</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul id="navMenu" class="nav-list">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a class="active" href="demo.html">Book Free Demo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="main" class="section demo-page">
+    <div class="container">
+      <header class="demo-header">
+        <h1 class="page-title">Book a Free Demo</h1>
+        <p class="page-sub">Pick a time that works or send a quick enquiry—our team will get back shortly.</p>
+      </header>
+
+      <div class="demo-wrap">
+        <!-- LEFT: Forms -->
+        <div class="demo-main">
+          <!-- Tabs -->
+          <div class="tabs" role="tablist" aria-label="Demo options">
+            <button id="tab-enquiry" class="tab active" role="tab" aria-selected="true" aria-controls="panel-enquiry">Enquiry</button>
+            <button id="tab-book" class="tab" role="tab" aria-selected="false" aria-controls="panel-book">Book a Demo</button>
+          </div>
+
+          <!-- Enquiry -->
+          <section id="panel-enquiry" class="tab-panel" role="tabpanel" aria-labelledby="tab-enquiry">
+            <form id="enquiryForm" class="card demo-card" method="post" action="#" novalidate data-reveal="up">
+              <h2 class="card-title">Send an Enquiry</h2>
+              <p class="card-sub">Tell us what you need—software, deadlines, clean‑up level, etc.</p>
+
+              <div class="grid-2">
+                <label>Full name
+                  <input name="name" autocomplete="name" required>
+                </label>
+                <label>Work email
+                  <input type="email" name="email" autocomplete="email" required>
+                </label>
+                <label>Phone
+                  <input type="tel" name="phone" autocomplete="tel" required>
+                </label>
+                <label>Company
+                  <input name="company" autocomplete="organization">
+                </label>
+              </div>
+
+              <label>Monthly transactions (approx.)
+                <select name="volume">
+                  <option value="0-200">0–200</option>
+                  <option value="200-500">200–500</option>
+                  <option value="500-1000">500–1,000</option>
+                  <option value="1000+">1,000+</option>
+                </select>
+              </label>
+
+              <fieldset>
+                <legend>Services needed</legend>
+                <label><input type="checkbox" name="services" value="monthly"> Monthly bookkeeping</label>
+                <label><input type="checkbox" name="services" value="cleanup"> Clean‑up / catch‑up</label>
+                <label><input type="checkbox" name="services" value="payroll"> Payroll</label>
+                <label><input type="checkbox" name="services" value="ap-ar"> AP / AR</label>
+                <label><input type="checkbox" name="services" value="reporting"> Management reporting</label>
+                <label><input type="checkbox" name="services" value="sales-tax"> Sales tax</label>
+              </fieldset>
+
+              <label>Your message
+                <textarea name="message" rows="3" placeholder="Share any details you want us to know…"></textarea>
+              </label>
+
+              <!-- Attribution (optional) -->
+              <input type="hidden" id="gclid" name="gclid">
+              <input type="hidden" id="utm_source" name="utm_source">
+              <input type="hidden" id="utm_campaign" name="utm_campaign">
+
+              <button class="btn btn-primary btn-lg" type="submit">Submit Enquiry</button>
+              <p class="micro text-muted">By submitting, you agree to our privacy practices.</p>
+            </form>
+          </section>
+
+          <!-- Book a demo -->
+          <section id="panel-book" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-book">
+            <form id="bookForm" class="card demo-card" method="post" action="#" novalidate data-reveal="up">
+              <h2 class="card-title">Schedule Your Demo</h2>
+              <p class="card-sub">Choose a date & time. We’ll email a calendar invite with a meeting link.</p>
+
+              <div class="grid-2">
+                <label>Full name
+                  <input name="name" required>
+                </label>
+                <label>Work email
+                  <input type="email" name="email" required>
+                </label>
+                <label>Phone
+                  <input type="tel" name="phone" required>
+                </label>
+                <label>Company
+                  <input name="company">
+                </label>
+              </div>
+
+              <div class="grid-2">
+                <label>Preferred date
+                  <input type="date" name="date" required>
+                </label>
+                <label>Preferred time
+                  <input type="time" name="time" required>
+                </label>
+              </div>
+
+              <div class="grid-2">
+                <label>Time zone
+                  <select name="timezone" required>
+                    <option value="UTC">UTC</option>
+                    <option value="America/New_York">US/Eastern</option>
+                    <option value="America/Chicago">US/Central</option>
+                    <option value="America/Denver">US/Mountain</option>
+                    <option value="America/Los_Angeles">US/Pacific</option>
+                    <option value="Europe/London">UK (BST/GMT)</option>
+                    <option value="Asia/Kolkata">India (IST)</option>
+                    <option value="Australia/Sydney">Australia (AEST/AEDT)</option>
+                  </select>
+                </label>
+                <label>Meeting method
+                  <select name="meeting" required>
+                    <option value="google-meet">Google Meet</option>
+                    <option value="zoom">Zoom</option>
+                    <option value="phone">Phone call</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>Notes (optional)
+                <textarea name="notes" rows="3" placeholder="What would you like us to focus on?"></textarea>
+              </label>
+
+              <!-- Attribution (optional) -->
+              <input type="hidden" id="gclid2" name="gclid">
+              <input type="hidden" id="utm_source2" name="utm_source">
+              <input type="hidden" id="utm_campaign2" name="utm_campaign">
+
+              <button class="btn btn-primary btn-lg" type="submit">Book Demo</button>
+              <p class="micro text-muted">We’ll confirm the time by email and include the meeting link.</p>
+            </form>
+          </section>
+        </div>
+
+        <!-- RIGHT: About & Achievements (sticky) -->
+        <aside class="demo-aside" aria-label="About & Achievements">
+          <div class="card sticky" data-reveal="up">
+            <h3 class="aside-title">About ASN Bookkeeping</h3>
+            <p class="aside-copy">
+              We deliver accurate, tax‑ready books every month using a proven close checklist.
+              Expect clear reports, faster decisions, and audit‑ready records.
+            </p>
+
+            <ul class="list-check">
+              <li>US GAAP‑aligned processes</li>
+              <li>AP/AR, payroll, and sales tax support</li>
+              <li>Dedicated bookkeeper + backup coverage</li>
+              <li>Works with QuickBooks, Xero, Zoho, NetSuite</li>
+            </ul>
+
+            <div class="achievements">
+              <div class="ach">
+                <div class="ach-num">100+</div>
+                <div class="ach-label">Clients</div>
+              </div>
+              <div class="ach">
+                <div class="ach-num">1M+</div>
+                <div class="ach-label">Reconciliations</div>
+              </div>
+              <div class="ach">
+                <div class="ach-num">99.2%</div>
+                <div class="ach-label">On‑time closes</div>
+              </div>
+              <div class="ach">
+                <div class="ach-num">4.9/5</div>
+                <div class="ach-label">Client rating</div>
+              </div>
+            </div>
+
+            <h4 class="aside-sub">Tools we support</h4>
+            <ul class="tools">
+              <li>QuickBooks</li><li>Xero</li><li>Zoho</li><li>NetSuite</li><li>Bill</li><li>Stripe</li>
+            </ul>
+
+            <h4 class="aside-sub">Support hours</h4>
+            <p class="aside-copy">Mon–Fri, 9am–6pm (your local time). Priority support available.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand--footer"><span class="brand-mark">A</span><span class="brand-text">ASN Bookkeeping</span></div>
+        <p class="micro">© <span id="year"></span> ASN Bookkeeping. All rights reserved.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="list-unstyled">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#why">Why Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="list-unstyled">
+          <li><a href="tel:+18005551234">(800) 555‑1234</a></li>
+          <li><a href="mailto:hello@asnbookkeeping.example">hello@asnbookkeeping.example</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="demo.js" defer></script>
+</body>
+</html>
