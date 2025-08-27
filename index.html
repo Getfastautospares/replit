@@ -6,6 +6,31 @@
   <title>ASN Bookkeeping — Online Bookkeeping Services</title>
   <meta name="description" content="Professional bookkeeping services that eliminate errors and keep your financial records accurate and up to date." />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Open Graph -->
+<meta property="og:title" content="ASN Bookkeeping — Online Bookkeeping Services">
+<meta property="og:description" content="Clean books, on-time closes, and audit-ready reports.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getfastautospares.github.io/replit/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ASN Bookkeeping — Online Bookkeeping Services">
+<meta name="twitter:description" content="Clean books, on-time closes, and audit-ready reports.">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"ASN Bookkeeping",
+  "url":"https://getfastautospares.github.io/replit/",
+  "logo":"https://getfastautospares.github.io/replit/icon.png",
+  "sameAs":["https://www.facebook.com/","https://www.linkedin.com/"],
+  "address":{"@type":"PostalAddress","addressCountry":"US"},
+  "contactPoint":[{"@type":"ContactPoint","telephone":"+1-800-555-1234","contactType":"sales"}]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -33,6 +58,7 @@
 
       <div class="header-cta">
         <a class="btn btn-primary" href="demo.html">Book Free Demo</a>
+         <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle dark mode">🌙</button>
       </div>
     </div>
   </header>
@@ -92,22 +118,29 @@
           Our global presence spans the US, UK, and Australia—delivering results‑driven accounting solutions for 200+ businesses!
         </p>
 
-        <div class="about-grid">
+        
           <img class="about-img"data-reveal="right"> src="https://images.unsplash.com/photo-1554224155-1696413563ad?q=80&w=1600&auto=format&fit=crop"
                alt="Financial papers and calculator on desk">
                data-reveal="right">
 
-          <div class="about-points"data-reveal="left">
-            <h3 class="h3">Why Choose ASN Bookkeeping?</h3>
-            <ul class="ticks">
-              <li>Expert financial management for smarter business decisions</li>
-              <li>Automation that streamlines error‑free bookkeeping processes</li>
-              <li>Dedicated bookkeeper assigned to understand your needs</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+          <!-- About grid -->
+           <div class="about-grid">
+           <img
+    class="about-img"
+    src="https://images.unsplash.com/photo-1554224155-1696413563ad?q=80&w=1600&auto=format&fit=crop"
+    alt="Financial papers and calculator on desk"
+    data-reveal="right">
+  <div class="about-points" data-reveal="left">
+    <h3 class="h3">Why Choose ASN Bookkeeping?</h3>
+    <ul class="ticks">
+      <li>Expert financial management for smarter business decisions</li>
+      <li>Automation that streamlines error-free bookkeeping processes</li>
+      <li>Dedicated bookkeeper assigned to understand your needs</li>
+    </ul>
+  </div>
+</div>
+</div>
+</section>
 
     <!-- ===== Services We Offer ===== -->
     <section id="services" class="section alt">
@@ -231,6 +264,26 @@
 
     <!-- ===== Contact / Demo ===== -->
     <section id="contact" class="section">
+      <section class="section" id="faqs" data-reveal="up" aria-labelledby="faq-title">
+  <div class="container">
+    <h2 class="h2 center" id="faq-title">FAQs</h2>
+    <div class="accordion" id="faq-accordion">
+      <details class="acc">
+        <summary>Which tools do you support?</summary>
+        <div class="acc-panel">QuickBooks, Xero, Zoho, NetSuite, Bill, Stripe.</div>
+      </details>
+      <details class="acc">
+        <summary>How fast can we start?</summary>
+        <div class="acc-panel">Discovery this week; clean-up 3–10 days based on scope.</div>
+      </details>
+      <details class="acc">
+        <summary>Do you handle taxes?</summary>
+        <div class="acc-panel">We prep books and work with your CPA. We’ll coordinate filing if needed.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
       <div class="container contact-wrap">
         <div>
           <h2 class="section-title">Book a Free Demo</h2>
@@ -288,5 +341,6 @@
   </footer>
 
   <script src="script.js" defer></script>
+  <button id="backToTop" class="back-top" aria-label="Back to top">↑</button>
 </body>
 </html>

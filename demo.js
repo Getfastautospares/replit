@@ -17,6 +17,7 @@ const tabEnquiry = document.getElementById('tab-enquiry');
 const tabBook = document.getElementById('tab-book');
 const panelEnquiry = document.getElementById('panel-enquiry');
 const panelBook = document.getElementById('panel-book');
+
 function activate(tab){
   const isEnquiry = tab === 'enquiry';
   tabEnquiry.classList.toggle('active', isEnquiry);
@@ -41,7 +42,7 @@ tabBook?.addEventListener('click', () => activate('book'));
   fill('utm_campaign', get('utm_campaign'));  fill('utm_campaign2', get('utm_campaign'));
 })();
 
-// Light validation + demo redirect
+// Light validation + thank-you redirect (demo only)
 function wireForm(id){
   const form = document.getElementById(id);
   if (!form) return;
@@ -49,11 +50,12 @@ function wireForm(id){
     const required = [...form.querySelectorAll('[required]')];
     const firstEmpty = required.find(el => !el.value.trim());
     if (firstEmpty){
-      e.preventDefault(); firstEmpty.focus();
+      e.preventDefault();
+      firstEmpty.focus();
       alert('Please fill all required fields.');
       return;
     }
-    // Demo only: redirect to a simple thank-you unless you set a real endpoint
+    // Demo only: if no real endpoint, show thank-you
     if (!form.getAttribute('action') || form.getAttribute('action') === '#'){
       e.preventDefault();
       window.location.href = 'thank-you.html';
@@ -62,12 +64,44 @@ function wireForm(id){
 }
 wireForm('enquiryForm');
 wireForm('bookForm');
-// inside wireForm(...) just before the current thank-you redirect
-e.preventDefault();
-fetch('https://YOUR-WEBHOOK-ENDPOINT/submit', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(Object.fromEntries(new FormData(form)))
-})
-.then(() => window.location.href = 'thank-you.html')
-.catch(() => alert('Submission failed. Try again or call us.'));
+
+// Scroll reveal (run once, on this page)
+(function(){
+  const els = document.querySelectorAll('[data-reveal]');
+  if (!els.length) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting){
+        e.target.classList.add('reveal-in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.2 });
+  els.forEach(el => io.observe(el));
+})();
+// Dark mode toggle with persistence
+(function(){
+  const root = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') root.classList.add('dark');
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  const syncIcon = () => btn.textContent = root.classList.contains('dark') ? '☀️' : '🌙';
+  syncIcon();
+  btn.addEventListener('click', () => {
+    const isDark = root.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    syncIcon();
+  });
+})();
+// Back-to-top show/hide + smooth scroll
+(function(){
+  const btn = document.getElementById('backToTop');
+  if(!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('show', window.scrollY > 600);
+  });
+  btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+})();
+
+
